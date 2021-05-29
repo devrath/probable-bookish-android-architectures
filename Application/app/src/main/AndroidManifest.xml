@@ -3,6 +3,7 @@
     package="com.example.demo">
 
     <application
+        android:name=".CreaturemonApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,12 +18,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".mvp.activities.MainActivityMvp"
+        <activity android:name=".mvp.MainActivityMvp"
             android:label="@string/mvi_demo" />
         <activity android:name=".mvi.activities.MainActivityMvi"
             android:label="@string/mvi_demo"/>
         <activity android:name=".mvvm.activities.MainActivityMvvm"
             android:label="@string/mvvm_demo"/>
+
+        <activity android:name=".mvp.view.allcreatures.AllCreaturesActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/all_creatures"/>
+
+        <activity android:name=".mvp.view.creature.CreatureActivity"
+            android:label="@string/all_creatures"/>
     </application>
 
 </manifest>
