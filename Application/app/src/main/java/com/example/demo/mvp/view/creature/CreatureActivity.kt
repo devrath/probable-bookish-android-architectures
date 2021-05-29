@@ -11,9 +11,11 @@ import androidx.annotation.DrawableRes
 import com.example.demo.R
 import com.example.demo.databinding.ActivityCreatureBinding
 import com.example.demo.mvp.model.AttributeStore
+import com.example.demo.mvp.model.AttributeType
 import com.example.demo.mvp.model.AttributeValue
 import com.example.demo.mvp.model.Avatar
 import com.example.demo.mvp.presenter.CreatureContract
+import com.example.demo.mvp.presenter.CreaturePresenter
 import com.example.demo.mvp.view.avatars.AvatarAdapter
 import com.example.demo.mvp.view.avatars.AvatarBottomDialogFragment
 
@@ -21,11 +23,14 @@ import com.example.demo.mvp.view.avatars.AvatarBottomDialogFragment
 class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, CreatureContract.View  {
 
   private lateinit var binding: ActivityCreatureBinding
+  private val presenter = CreaturePresenter()
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     binding = ActivityCreatureBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
+    presenter.setView(this)
 
     configureUI()
     configureSpinnerAdapters()
@@ -37,7 +42,7 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, Crea
   private fun configureUI() {
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     title = getString(R.string.add_creature)
-    // TODO: hide label
+    if (presenter.isDrawableSelected()) hideTapLabel()
   }
 
   private fun configureSpinnerAdapters() {
@@ -52,19 +57,19 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, Crea
   private fun configureSpinnerListeners() {
     binding.intelligence.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
       override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        // TODO: handle selection
+        presenter.attributeSelected(AttributeType.INTELLIGENCE, position)
       }
       override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
     binding.strength.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
       override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        // TODO: handle selection
+        presenter.attributeSelected(AttributeType.STRENGTH, position)
       }
       override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
     binding.endurance.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
       override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        // TODO: handle selection
+        presenter.attributeSelected(AttributeType.ENDURANCE, position)
       }
       override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
@@ -75,7 +80,7 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, Crea
       override fun afterTextChanged(s: Editable?) {}
       override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
       override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        // TODO: handle text changed
+        presenter.updateName(s.toString())
       }
     })
   }
@@ -92,7 +97,7 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, Crea
   }
 
   override fun avatarClicked(avatar: Avatar) {
-    // TODO: handle avatar clicked
+    presenter.drawableSelected(avatar.drawable)
     hideTapLabel()
   }
 
