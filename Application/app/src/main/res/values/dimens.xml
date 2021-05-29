@@ -5,4 +5,5 @@
     <dimen name="dp_8">8dp</dimen>
     <dimen name="dp_16">16dp</dimen>
     <dimen name="list_item_creature_height">100dp</dimen>
+    <dimen name="mvp_sel_btn_padding">20dp</dimen>
 </resources>

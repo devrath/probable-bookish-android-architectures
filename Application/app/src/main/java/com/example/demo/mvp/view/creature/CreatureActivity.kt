@@ -23,7 +23,7 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     binding = ActivityCreatureBinding.inflate(layoutInflater)
-    val view = binding.root
+    setContentView(binding.root)
 
     configureUI()
     configureSpinnerAdapters()
@@ -39,11 +39,11 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   }
 
   private fun configureSpinnerAdapters() {
-    binding.intelligence.adapter = ArrayAdapter<AttributeValue>(this,
+    binding.intelligence.adapter = ArrayAdapter(this,
         android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
-    binding.strength.adapter = ArrayAdapter<AttributeValue>(this,
+    binding.strength.adapter = ArrayAdapter(this,
         android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
-    binding.endurance.adapter = ArrayAdapter<AttributeValue>(this,
+    binding.endurance.adapter = ArrayAdapter(this,
         android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
   }
 

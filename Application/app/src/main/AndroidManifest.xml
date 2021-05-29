@@ -30,6 +30,7 @@
             android:label="@string/all_creatures"/>
 
         <activity android:name=".mvp.view.creature.CreatureActivity"
+            android:theme="@style/AppTheme"
             android:label="@string/all_creatures"/>
     </application>
 
