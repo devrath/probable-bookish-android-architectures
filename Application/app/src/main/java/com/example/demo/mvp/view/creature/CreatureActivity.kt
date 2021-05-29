@@ -7,16 +7,18 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.annotation.DrawableRes
 import com.example.demo.R
 import com.example.demo.databinding.ActivityCreatureBinding
 import com.example.demo.mvp.model.AttributeStore
 import com.example.demo.mvp.model.AttributeValue
 import com.example.demo.mvp.model.Avatar
+import com.example.demo.mvp.presenter.CreatureContract
 import com.example.demo.mvp.view.avatars.AvatarAdapter
 import com.example.demo.mvp.view.avatars.AvatarBottomDialogFragment
 
 
-class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
+class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, CreatureContract.View  {
 
   private lateinit var binding: ActivityCreatureBinding
 
@@ -97,4 +99,13 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   private fun hideTapLabel() {
     binding.tapLabel.visibility = View.INVISIBLE
   }
+
+  override fun showHitPoints(hitPoints: String) {
+    binding.hitPoints.text = hitPoints
+  }
+
+  override fun showAvatarDrawable(@DrawableRes resourceId: Int) {
+    binding.avatarImageView.setImageResource(resourceId)
+  }
+
 }
