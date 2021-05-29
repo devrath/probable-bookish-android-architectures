@@ -22,9 +22,7 @@ import com.example.demo.mvp.view.avatars.AvatarAdapter
 import com.example.demo.mvp.view.avatars.AvatarBottomDialogFragment
 
 
-class CreatureActivity : AppCompatActivity(),
-                         AvatarAdapter.AvatarListener,
-                         CreatureContract.View, AllCreaturesContract.View {
+class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, CreatureContract.View {
 
   private lateinit var binding: ActivityCreatureBinding
   private val presenter = CreaturePresenter()
@@ -50,12 +48,12 @@ class CreatureActivity : AppCompatActivity(),
   }
 
   private fun configureSpinnerAdapters() {
-    binding.intelligence.adapter = ArrayAdapter(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
-    binding.strength.adapter = ArrayAdapter(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
-    binding.endurance.adapter = ArrayAdapter(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
+    binding.intelligence.adapter = ArrayAdapter<AttributeValue>(this,
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
+    binding.strength.adapter = ArrayAdapter<AttributeValue>(this,
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
+    binding.endurance.adapter = ArrayAdapter<AttributeValue>(this,
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
   }
 
   private fun configureSpinnerListeners() {
@@ -124,10 +122,6 @@ class CreatureActivity : AppCompatActivity(),
 
   override fun showCreatureSaveError() {
     Toast.makeText(this, getString(R.string.error_saving_creature), Toast.LENGTH_SHORT).show()
-  }
-
-  override fun showCreaturesCleared() {
-    Toast.makeText(this, getString(R.string.creatures_cleared), Toast.LENGTH_SHORT).show()
   }
 
 }

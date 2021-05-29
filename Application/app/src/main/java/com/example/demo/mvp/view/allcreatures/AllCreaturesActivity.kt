@@ -6,15 +6,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import com.example.demo.R
 import com.example.demo.databinding.ActivityAllCreaturesBinding
+import com.example.demo.mvp.presenter.AllCreaturesContract
+import com.example.demo.mvp.presenter.AllCreaturesPresenter
 import com.example.demo.mvp.view.creature.CreatureActivity
 
-class AllCreaturesActivity : AppCompatActivity() {
+class AllCreaturesActivity : AppCompatActivity(), AllCreaturesContract.View {
 
   private lateinit var binding: ActivityAllCreaturesBinding
 
   private val adapter = CreatureAdapter(mutableListOf())
+
+  private val presenter = AllCreaturesPresenter()
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -22,6 +28,14 @@ class AllCreaturesActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
     setSupportActionBar(binding.toolbar)
+
+    presenter.setView(this)
+
+    presenter.getAllCreatures().observe(this, { creatures ->
+      creatures?.let {
+        adapter.updateCreatures(creatures)
+      }
+    })
 
     binding.contentAllCreaturesId.creaturesRecyclerView.layoutManager = LinearLayoutManager(this)
     binding.contentAllCreaturesId.creaturesRecyclerView.adapter = adapter
@@ -44,5 +58,9 @@ class AllCreaturesActivity : AppCompatActivity() {
       }
       else -> super.onOptionsItemSelected(item)
     }
+  }
+
+  override fun showCreaturesCleared() {
+    Toast.makeText(this, getString(R.string.creatures_cleared), Toast.LENGTH_SHORT).show()
   }
 }
