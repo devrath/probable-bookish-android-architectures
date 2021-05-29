@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".mvp.activities.MainActivityMvp"
+            android:label="@string/mvi_demo" />
+        <activity android:name=".mvi.activities.MainActivityMvi"
+            android:label="@string/mvi_demo"/>
+        <activity android:name=".mvvm.activities.MainActivityMvvm"
+            android:label="@string/mvvm_demo"/>
     </application>
 
 </manifest>
