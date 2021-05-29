@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.annotation.DrawableRes
 import com.example.demo.R
 import com.example.demo.databinding.ActivityCreatureBinding
@@ -14,13 +15,16 @@ import com.example.demo.mvp.model.AttributeStore
 import com.example.demo.mvp.model.AttributeType
 import com.example.demo.mvp.model.AttributeValue
 import com.example.demo.mvp.model.Avatar
+import com.example.demo.mvp.presenter.AllCreaturesContract
 import com.example.demo.mvp.presenter.CreatureContract
 import com.example.demo.mvp.presenter.CreaturePresenter
 import com.example.demo.mvp.view.avatars.AvatarAdapter
 import com.example.demo.mvp.view.avatars.AvatarBottomDialogFragment
 
 
-class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, CreatureContract.View  {
+class CreatureActivity : AppCompatActivity(),
+                         AvatarAdapter.AvatarListener,
+                         CreatureContract.View, AllCreaturesContract.View {
 
   private lateinit var binding: ActivityCreatureBinding
   private val presenter = CreaturePresenter()
@@ -92,7 +96,7 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, Crea
     }
 
     binding.saveButton.setOnClickListener {
-      // TODO: handle save button clicked
+      presenter.saveCreature()
     }
   }
 
@@ -111,6 +115,19 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener, Crea
 
   override fun showAvatarDrawable(@DrawableRes resourceId: Int) {
     binding.avatarImageView.setImageResource(resourceId)
+  }
+
+  override fun showCreatureSaved() {
+    Toast.makeText(this, getString(R.string.creature_saved), Toast.LENGTH_SHORT).show()
+    finish()
+  }
+
+  override fun showCreatureSaveError() {
+    Toast.makeText(this, getString(R.string.error_saving_creature), Toast.LENGTH_SHORT).show()
+  }
+
+  override fun showCreaturesCleared() {
+    Toast.makeText(this, getString(R.string.creatures_cleared), Toast.LENGTH_SHORT).show()
   }
 
 }

@@ -10,11 +10,14 @@ interface CreatureContract {
     fun attributeSelected(attributeType: AttributeType, position: Int)
     fun drawableSelected(drawable: Int)
     fun isDrawableSelected(): Boolean
+    fun saveCreature()
   }
 
   interface View {
     fun showHitPoints(hitPoints: String)
     fun showAvatarDrawable(@DrawableRes resourceId: Int)
+    fun showCreatureSaved()
+    fun showCreatureSaveError()
   }
 
 }

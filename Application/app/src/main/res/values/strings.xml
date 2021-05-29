@@ -19,5 +19,6 @@
     <string name="add_creature">Add Creature</string>
     <string name="start">Start</string>
     <string name="all_creatures">All Creatures</string>
+    <string name="creatures_cleared">All Creatures cleared</string>
 
 </resources>
