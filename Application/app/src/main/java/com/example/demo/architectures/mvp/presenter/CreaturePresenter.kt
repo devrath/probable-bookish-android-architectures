@@ -2,6 +2,7 @@ package com.example.demo.architectures.mvp.presenter
 
 import com.example.demo.architectures.commonlayer.model.*
 import com.example.demo.architectures.commonlayer.model.room.RoomRepository
+import com.example.demo.architectures.mvp.contracts.CreatureContract
 
 class CreaturePresenter(private val generator: CreatureGenerator = CreatureGenerator(),
                         private val repository: CreatureRepository = RoomRepository()

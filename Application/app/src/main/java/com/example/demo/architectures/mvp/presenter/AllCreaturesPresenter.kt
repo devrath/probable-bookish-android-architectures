@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.demo.architectures.commonlayer.model.Creature
 import com.example.demo.architectures.commonlayer.model.CreatureRepository
 import com.example.demo.architectures.commonlayer.model.room.RoomRepository
+import com.example.demo.architectures.mvp.contracts.AllCreaturesContract
 
 class AllCreaturesPresenter(private val repository: CreatureRepository = RoomRepository())
   : BasePresenter<AllCreaturesContract.View>(), AllCreaturesContract.Presenter {

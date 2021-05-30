@@ -15,7 +15,7 @@ import com.example.demo.architectures.commonlayer.model.AttributeStore
 import com.example.demo.architectures.commonlayer.model.AttributeType
 import com.example.demo.architectures.commonlayer.model.AttributeValue
 import com.example.demo.architectures.commonlayer.model.Avatar
-import com.example.demo.architectures.mvp.presenter.CreatureContract
+import com.example.demo.architectures.mvp.contracts.CreatureContract
 import com.example.demo.architectures.mvp.presenter.CreaturePresenter
 import com.example.demo.architectures.mvp.view.avatars.AvatarAdapter
 import com.example.demo.architectures.mvp.view.avatars.AvatarBottomDialogFragment

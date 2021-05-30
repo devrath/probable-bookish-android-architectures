@@ -9,7 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.example.demo.R
 import com.example.demo.databinding.ActivityAllCreaturesBinding
-import com.example.demo.architectures.mvp.presenter.AllCreaturesContract
+import com.example.demo.architectures.mvp.contracts.AllCreaturesContract
 import com.example.demo.architectures.mvp.presenter.AllCreaturesPresenter
 import com.example.demo.architectures.mvp.view.creature.CreatureActivity
 
@@ -53,6 +53,7 @@ class AllCreaturesActivity : AppCompatActivity(), AllCreaturesContract.View {
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     return when (item.itemId) {
       R.id.action_clear_all -> {
+        presenter.clearAllCreatures()
         true
       }
       else -> super.onOptionsItemSelected(item)

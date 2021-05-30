@@ -1,6 +1,7 @@
 package com.example.demo.architectures.mvp.presenter
 
 import com.example.demo.architectures.commonlayer.model.*
+import com.example.demo.architectures.mvp.contracts.CreatureContract
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
