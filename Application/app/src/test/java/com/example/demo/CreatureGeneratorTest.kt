@@ -1,5 +1,8 @@
-package com.example.demo.architectures.commonlayer.model
+package com.example.demo
 
+import com.example.demo.architectures.commonlayer.model.Creature
+import com.example.demo.architectures.commonlayer.model.CreatureAttributes
+import com.example.demo.architectures.commonlayer.model.CreatureGenerator
 import junit.framework.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
