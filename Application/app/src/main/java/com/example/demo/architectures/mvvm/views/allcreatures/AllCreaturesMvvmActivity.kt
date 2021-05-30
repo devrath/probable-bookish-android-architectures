@@ -5,14 +5,18 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demo.R
+import com.example.demo.architectures.mvvm.viewmodels.AllCreaturesViewModel
 import com.example.demo.architectures.mvvm.views.creature.CreatureActivity
 import com.example.demo.databinding.ActivityAllCreaturesMvvmBinding
 
 class AllCreaturesMvvmActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAllCreaturesMvvmBinding
+
+    private lateinit var viewModel: AllCreaturesViewModel
 
     private val adapter = CreatureAdapter(mutableListOf())
 
@@ -25,6 +29,12 @@ class AllCreaturesMvvmActivity : AppCompatActivity() {
 
         binding.contentAllCreaturesId.creaturesRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.contentAllCreaturesId.creaturesRecyclerView.adapter = adapter
+
+        viewModel.getAllCreaturesLiveData().observe(this, Observer { creatures ->
+            creatures?.let {
+                adapter.updateCreatures(creatures)
+            }
+        })
 
         binding.fab.setOnClickListener {
             startActivity(Intent(this, CreatureActivity::class.java))
@@ -40,6 +50,7 @@ class AllCreaturesMvvmActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_clear_all -> {
+                viewModel.clearAllCreatures()
                 true
             }
             else -> super.onOptionsItemSelected(item)

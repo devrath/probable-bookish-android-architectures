@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -41,7 +42,6 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
     configureClickListeners()
     configureLiveDataObservers()
   }
-
   private fun configureUI() {
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     title = getString(R.string.add_creature)
@@ -50,11 +50,11 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
 
   private fun configureSpinnerAdapters() {
     binding.intelligence.adapter = ArrayAdapter<AttributeValue>(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
     binding.strength.adapter = ArrayAdapter<AttributeValue>(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
     binding.endurance.adapter = ArrayAdapter<AttributeValue>(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
   }
 
   private fun configureSpinnerListeners() {
@@ -96,7 +96,12 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
     }
 
     binding.saveButton.setOnClickListener {
-      // TODO: handle save button clicked
+      if (viewModel.saveCreature()) {
+        Toast.makeText(this, getString(R.string.creature_saved), Toast.LENGTH_SHORT).show()
+        finish()
+      } else {
+        Toast.makeText(this, getString(R.string.error_saving_creature), Toast.LENGTH_SHORT).show()
+      }
     }
   }
 
