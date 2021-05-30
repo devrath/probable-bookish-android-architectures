@@ -25,7 +25,11 @@
         <activity android:name="com.example.demo.architectures.mvvm.MainActivityMvvm"
             android:label="@string/mvvm_demo"/>
 
-        <activity android:name="com.example.demo.architectures.mvp.view.allcreatures.AllCreaturesActivity"
+        <activity android:name="com.example.demo.architectures.mvp.view.allcreatures.AllCreaturesMvpActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/all_creatures"/>
+
+        <activity android:name="com.example.demo.architectures.mvvm.views.allcreatures.AllCreaturesMvvmActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/all_creatures"/>
 

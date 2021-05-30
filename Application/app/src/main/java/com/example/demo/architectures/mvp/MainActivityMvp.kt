@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.demo.databinding.ActivityMainMvpBinding
-import com.example.demo.architectures.mvp.view.allcreatures.AllCreaturesActivity
+import com.example.demo.architectures.mvp.view.allcreatures.AllCreaturesMvpActivity
 
 class MainActivityMvp : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class MainActivityMvp : AppCompatActivity() {
 
         binding.apply {
             startId.setOnClickListener {
-                startActivity(Intent(this@MainActivityMvp, AllCreaturesActivity::class.java))
+                startActivity(Intent(this@MainActivityMvp, AllCreaturesMvpActivity::class.java))
             }
         }
     }

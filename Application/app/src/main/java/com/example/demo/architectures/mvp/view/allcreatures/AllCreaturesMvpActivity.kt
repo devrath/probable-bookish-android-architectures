@@ -8,14 +8,14 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.demo.R
-import com.example.demo.databinding.ActivityAllCreaturesBinding
 import com.example.demo.architectures.mvp.contracts.AllCreaturesContract
 import com.example.demo.architectures.mvp.presenter.AllCreaturesPresenter
 import com.example.demo.architectures.mvp.view.creature.CreatureActivity
+import com.example.demo.databinding.ActivityAllCreaturesMvpBinding
 
-class AllCreaturesActivity : AppCompatActivity(), AllCreaturesContract.View {
+class AllCreaturesMvpActivity : AppCompatActivity(), AllCreaturesContract.View {
 
-  private lateinit var binding: ActivityAllCreaturesBinding
+  private lateinit var binding: ActivityAllCreaturesMvpBinding
 
   private val adapter = CreatureAdapter(mutableListOf())
 
@@ -23,7 +23,7 @@ class AllCreaturesActivity : AppCompatActivity(), AllCreaturesContract.View {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    binding = ActivityAllCreaturesBinding.inflate(layoutInflater)
+    binding = ActivityAllCreaturesMvpBinding.inflate(layoutInflater)
     val view = binding.root
     setContentView(view)
     setSupportActionBar(binding.toolbar)
