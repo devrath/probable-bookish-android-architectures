@@ -4,9 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.demo.databinding.ActivityMainBinding
-import com.example.demo.mvi.activities.MainActivityMvi
-import com.example.demo.mvp.MainActivityMvp
-import com.example.demo.mvvm.activities.MainActivityMvvm
+import com.example.demo.architectures.mvi.activities.MainActivityMvi
+import com.example.demo.architectures.mvp.MainActivityMvp
+import com.example.demo.architectures.mvvm.MainActivityMvvm
 
 class MainActivity : AppCompatActivity() {
 

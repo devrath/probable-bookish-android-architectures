@@ -2,7 +2,7 @@ package com.example.demo
 
 import android.app.Application
 import androidx.room.Room
-import com.example.demo.mvp.model.room.CreatureDatabase
+import com.example.demo.architectures.commonlayer.model.room.CreatureDatabase
 
 class CreaturemonApplication : Application() {
 

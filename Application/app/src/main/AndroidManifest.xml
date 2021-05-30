@@ -18,18 +18,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".mvp.MainActivityMvp"
+        <activity android:name="com.example.demo.architectures.mvp.MainActivityMvp"
             android:label="@string/mvi_demo" />
-        <activity android:name=".mvi.activities.MainActivityMvi"
+        <activity android:name="com.example.demo.architectures.mvi.activities.MainActivityMvi"
             android:label="@string/mvi_demo"/>
-        <activity android:name=".mvvm.activities.MainActivityMvvm"
+        <activity android:name="com.example.demo.architectures.mvvm.MainActivityMvvm"
             android:label="@string/mvvm_demo"/>
 
-        <activity android:name=".mvp.view.allcreatures.AllCreaturesActivity"
+        <activity android:name="com.example.demo.architectures.mvp.view.allcreatures.AllCreaturesActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/all_creatures"/>
 
-        <activity android:name=".mvp.view.creature.CreatureActivity"
+        <activity android:name="com.example.demo.architectures.mvp.view.creature.CreatureActivity"
             android:theme="@style/AppTheme"
             android:label="@string/all_creatures"/>
     </application>
