@@ -16,9 +16,9 @@
     <string name="error_saving_creature">Please complete all fields.</string>
     <string name="creature_saved">Creature saved!</string>
     <string name="clear_all_creatures">Clear All Creatures</string>
-    <string name="add_creature">Add Creature</string>
     <string name="start">Start</string>
     <string name="all_creatures">All Creatures</string>
     <string name="creatures_cleared">All Creatures cleared</string>
+    <string name="add_creature">Add Creature</string>
 
 </resources>

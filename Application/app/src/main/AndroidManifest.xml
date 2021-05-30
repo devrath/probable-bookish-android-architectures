@@ -35,7 +35,11 @@
 
         <activity android:name="com.example.demo.architectures.mvp.view.creature.CreatureActivity"
             android:theme="@style/AppTheme"
-            android:label="@string/all_creatures"/>
+            android:label="@string/add_creature"/>
+
+        <activity android:name=".architectures.mvvm.views.creature.CreatureActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/add_creature"/>
     </application>
 
 </manifest>
