@@ -20,7 +20,7 @@
 
         <activity android:name="com.example.demo.architectures.mvp.MainActivityMvp"
             android:label="@string/mvi_demo" />
-        <activity android:name="com.example.demo.architectures.mvi.activities.MainActivityMvi"
+        <activity android:name="com.example.demo.architectures.mvi.MainActivityMvi"
             android:label="@string/mvi_demo"/>
         <activity android:name="com.example.demo.architectures.mvvm.MainActivityMvvm"
             android:label="@string/mvvm_demo"/>

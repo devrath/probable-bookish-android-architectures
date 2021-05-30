@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demo.R
 import com.example.demo.architectures.mvvm.viewmodels.AllCreaturesViewModel
 import com.example.demo.architectures.mvvm.views.creature.CreatureActivity
-import com.example.demo.databinding.ActivityAllCreaturesMvvmBinding
+import com.example.demo.databinding.ActivityAllCreaturesBinding
 
 class AllCreaturesMvvmActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAllCreaturesMvvmBinding
+    private lateinit var binding: ActivityAllCreaturesBinding
 
     private lateinit var viewModel: AllCreaturesViewModel
 
@@ -22,7 +22,7 @@ class AllCreaturesMvvmActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAllCreaturesMvvmBinding.inflate(layoutInflater)
+        binding = ActivityAllCreaturesBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         setSupportActionBar(binding.toolbar)
