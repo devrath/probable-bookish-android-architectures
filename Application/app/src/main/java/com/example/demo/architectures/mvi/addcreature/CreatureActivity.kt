@@ -37,11 +37,11 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
 
   private fun configureSpinnerAdapters() {
     intelligence.adapter = ArrayAdapter<AttributeValue>(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
     strength.adapter = ArrayAdapter<AttributeValue>(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
     endurance.adapter = ArrayAdapter<AttributeValue>(this,
-        android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
+      android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
   }
 
   private fun configureSpinnerListeners() {
@@ -94,4 +94,5 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   private fun hideTapLabel() {
     tapLabel.visibility = View.INVISIBLE
   }
+
 }
