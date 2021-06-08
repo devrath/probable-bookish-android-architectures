@@ -8,6 +8,27 @@
   tools:context="com.example.demo.architectures.mvp.view.allcreatures.AllCreaturesMvpActivity"
   tools:showIn="@layout/activity_all_creatures_mvp">
 
+  <ProgressBar
+      android:id="@+id/progressBar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/emptyState"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      android:text="@string/no_creatures_found"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/creaturesRecyclerView"
     android:layout_width="0dp"
