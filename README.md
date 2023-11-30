@@ -1,10 +1,4 @@
-
 ![top-banner-99](https://github.com/devrath/probable-bookish-android-architectures/assets/1456191/e4e8dea1-d480-487c-8f4e-2d2d7086c3d4)
-
-
-
-
-
 
 <h1 align="center">𝚙𝚛𝚘𝚋𝚊𝚋𝚕𝚎-𝚋𝚘𝚘𝚔𝚒𝚜𝚑-𝚊𝚗𝚍𝚛𝚘𝚒𝚍-𝚊𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝𝚞𝚛𝚎𝚜 🧞</h1>
 <p align="center">
@@ -31,24 +25,18 @@
 
 
 ## **`MVC`**
-| About MVC |
-| --------- |
-| [**````MVC usage in application development````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVC-usage-in-application-development) |
+* [MVC usage in application development](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVC-usage-in-application-development)
 
 ## **`MVP`**
-| About MVP |
-| --------- |
-| [**````(MVP) Model View Presenter````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)---Model-View-Presenter) |
-| [**````(MVP) Code Summary````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVP-code-summary) |
-| [**````(MVP) Advantages````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)-Advantages) |
-| [**````(MVP) Pitfalls````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)-Pitfalls) |
+* [Model View Presenter](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)---Model-View-Presenter)
+* [Code Summary](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVP-code-summary) 
+* [Advantages](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)-Advantages) 
+* [Pitfalls](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)-Pitfalls) 
 
 ## **`MVVM`**
-| About MVVM |
-| --------- |
-| [**````(MVVM) Model View View-Model````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Model-View-View-Model) |
-| [**````(MVVM) Code Summary````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Code-Summary) |
-| [**````(MVVM) Advantages````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Advantages) |
+* [Model View View-Model](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Model-View-View-Model) 
+* [Code Summary](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Code-Summary) 
+* [Advantages](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Advantages) 
 
 
 ## **`𝚂𝚞𝚙𝚙𝚘𝚛𝚝`** ☕
