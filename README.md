@@ -17,9 +17,10 @@
 | | Contents |
 | - | ---- |
 | **`1`** | [**````𝙽𝚎𝚎𝚍 𝚘𝚏 𝚊𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝𝚞𝚛𝚎 𝚒𝚗 𝚊𝚙𝚙𝚕𝚒𝚌𝚊𝚝𝚒𝚘𝚗````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/Need-of-architecture-in-application) |
-| **`2`** | [**````𝙼𝚅𝙲````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVC-usage-in-application-development) |
-| **`3`** | [**````𝙼𝚅𝙿````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)---Model-View-Presenter) |
-| **`4`** | [**````𝙼𝚅𝚅𝙼````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Model-View-View-Model) |
+| **`2`** | [**````𝙼𝚘𝚗𝚘𝚕𝚒𝚝𝚑𝚒𝚌 𝙰𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝𝚞𝚛𝚎````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/Monolitic-Architecture) |
+| **`3`** | [**````𝙼𝚅𝙲````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVC-usage-in-application-development) |
+| **`4`** | [**````𝙼𝚅𝙿````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)---Model-View-Presenter) |
+| **`5`** | [**````𝙼𝚅𝚅𝙼````**](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Model-View-View-Model) |
 
 </div>
 
