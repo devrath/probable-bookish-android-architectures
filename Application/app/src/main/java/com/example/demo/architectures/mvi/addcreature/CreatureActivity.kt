@@ -1,26 +1,30 @@
 package com.example.demo.architectures.mvi.addcreature
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.example.demo.R
+import com.example.demo.architectures.mvi.addcreature.avatars.AvatarAdapter
+import com.example.demo.architectures.mvi.addcreature.avatars.AvatarBottomDialogFragment
 import com.example.demo.architectures.mvi.data.model.AttributeStore
 import com.example.demo.architectures.mvi.data.model.AttributeValue
 import com.example.demo.architectures.mvi.data.model.Avatar
-import com.example.demo.architectures.mvi.addcreature.avatars.AvatarAdapter
-import com.example.demo.architectures.mvi.addcreature.avatars.AvatarBottomDialogFragment
-import kotlinx.android.synthetic.main.activity_creature.*
+import com.example.demo.databinding.ActivityCreatureBinding
 
 
 class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
 
+
+  private lateinit var binding: ActivityCreatureBinding
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_creature)
+    binding = ActivityCreatureBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
     configureUI()
     configureSpinnerAdapters()
@@ -36,28 +40,28 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   }
 
   private fun configureSpinnerAdapters() {
-    intelligence.adapter = ArrayAdapter<AttributeValue>(this,
+    binding.intelligence.adapter = ArrayAdapter<AttributeValue>(this,
       android.R.layout.simple_spinner_dropdown_item, AttributeStore.INTELLIGENCE)
-    strength.adapter = ArrayAdapter<AttributeValue>(this,
+    binding.strength.adapter = ArrayAdapter<AttributeValue>(this,
       android.R.layout.simple_spinner_dropdown_item, AttributeStore.STRENGTH)
-    endurance.adapter = ArrayAdapter<AttributeValue>(this,
+    binding.endurance.adapter = ArrayAdapter<AttributeValue>(this,
       android.R.layout.simple_spinner_dropdown_item, AttributeStore.ENDURANCE)
   }
 
   private fun configureSpinnerListeners() {
-    intelligence.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+    binding.intelligence.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
       override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         // TODO: handle selection
       }
       override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
-    strength.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+    binding.strength.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
       override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         // TODO: handle selection
       }
       override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
-    endurance.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+    binding.endurance.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
       override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         // TODO: handle selection
       }
@@ -66,7 +70,7 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   }
 
   private fun configureEditText() {
-    nameEditText.addTextChangedListener(object : TextWatcher {
+    binding.nameEditText.addTextChangedListener(object : TextWatcher {
       override fun afterTextChanged(s: Editable?) {}
       override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
       override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -76,12 +80,12 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   }
 
   private fun configureClickListeners() {
-    avatarImageView.setOnClickListener {
+    binding.avatarImageView.setOnClickListener {
       val bottomDialogFragment = AvatarBottomDialogFragment.newInstance()
       bottomDialogFragment.show(supportFragmentManager, "AvatarBottomDialogFragment")
     }
 
-    saveButton.setOnClickListener {
+    binding.saveButton.setOnClickListener {
       // TODO: handle save button clicked
     }
   }
@@ -92,7 +96,7 @@ class CreatureActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
   }
 
   private fun hideTapLabel() {
-    tapLabel.visibility = View.INVISIBLE
+    binding.tapLabel.visibility = View.INVISIBLE
   }
 
 }

@@ -8,22 +8,30 @@ import android.view.LayoutInflater
 import android.view.View
 import com.example.demo.R
 import com.example.demo.architectures.mvi.data.model.Avatar
-import kotlinx.android.synthetic.main.layout_avatar_bottom_sheet.*
-
+import com.example.demo.databinding.LayoutAvatarBottomSheetBinding
 
 class AvatarBottomDialogFragment : BottomSheetDialogFragment(), AvatarAdapter.AvatarListener {
 
   private lateinit var callback: AvatarAdapter.AvatarListener
 
+  private var _binding: LayoutAvatarBottomSheetBinding? = null
+  private val binding get() = _binding!!
+
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-    return inflater.inflate(R.layout.layout_avatar_bottom_sheet, container, false)
+    _binding = LayoutAvatarBottomSheetBinding.inflate(inflater, container, false)
+    return binding.root
+  }
+
+  override fun onDestroyView() {
+    super.onDestroyView()
+    _binding = null
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    avatarRecyclerView.layoutManager = GridLayoutManager(context, 3)
-    avatarRecyclerView.adapter = AvatarAdapter(AvatarStore.AVATARS, this)
+    _binding?.avatarRecyclerView?.layoutManager = GridLayoutManager(context, 3)
+    _binding?.avatarRecyclerView?.adapter = AvatarAdapter(AvatarStore.AVATARS, this)
   }
 
   override fun onActivityCreated(savedInstanceState: Bundle?) {
