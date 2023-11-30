@@ -24,15 +24,6 @@
 </div>
 
 
-## **`MVC`**
-* [MVC usage in application development](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVC-usage-in-application-development)
-
-## **`MVP`**
-* [Model View Presenter](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)---Model-View-Presenter)
-* [Code Summary](https://github.com/devrath/probable-bookish-android-architectures/wiki/MVP-code-summary) 
-* [Advantages](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)-Advantages) 
-* [Pitfalls](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVP)-Pitfalls) 
-
 ## **`MVVM`**
 * [Model View View-Model](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Model-View-View-Model) 
 * [Code Summary](https://github.com/devrath/probable-bookish-android-architectures/wiki/(MVVM)-Code-Summary) 
