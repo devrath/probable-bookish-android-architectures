@@ -1,7 +1,12 @@
-<img src="https://github.com/devrath/devrath/blob/master/images/kotlin_logo.png" align="right" title="Kotlin Logo" width="120">
+
+![top-banner-99](https://github.com/devrath/probable-bookish-android-architectures/assets/1456191/e4e8dea1-d480-487c-8f4e-2d2d7086c3d4)
+
+
+
+
+
 
 <h1 align="center">𝚙𝚛𝚘𝚋𝚊𝚋𝚕𝚎-𝚋𝚘𝚘𝚔𝚒𝚜𝚑-𝚊𝚗𝚍𝚛𝚘𝚒𝚍-𝚊𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝𝚞𝚛𝚎𝚜 🧞</h1>
-
 <p align="center">
 <a><img src="https://img.shields.io/badge/Built%20Using-Kotlin-silver?style=for-the-badge&logo=kotlin"></a>
 <a><img src="https://img.shields.io/badge/Architecture-MVC-purple?style=for-the-badge&logo=Bitrise"></a>  
