@@ -7,22 +7,16 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.lifecycleScope
 import com.istudio.catapp.states.MainIntent
@@ -74,7 +68,7 @@ class MainActivity : ComponentActivity() {
         when (state) {
             is MainState.Idle -> IdleScreen(onButtonClick)
             is MainState.Loading -> LoadingScreen()
-            //is MainState.Animals -> AnimalsList(animals = state.animals)
+            is MainState.Success -> SuccessScreen(data = state.data)
             is MainState.Error -> {
                 IdleScreen(onButtonClick)
                 Toast.makeText(LocalContext.current, state.error, Toast.LENGTH_SHORT).show()
@@ -100,9 +94,11 @@ fun LoadingScreen() {
 }
 
 @Composable
-fun AnimalsList(animals: List<String>) {
+fun SuccessScreen(data: String?) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        // Data
+        data?.let {
+            Text(text = it)
+        }
     }
 }
 
@@ -115,7 +111,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 
-@Preview
+@Preview(
+    showSystemUi = true
+)
 @Composable
 fun ScreenPreview() {
     CatAppTheme {
