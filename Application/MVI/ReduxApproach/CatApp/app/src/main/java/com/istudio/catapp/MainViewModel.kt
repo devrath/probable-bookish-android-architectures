@@ -16,12 +16,6 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor( ) : ViewModel() {
 
-    init {
-        // We shall initialize the handling the intent part when the view model starts
-        handleIntent()
-    }
-
-
     /** <*********************> Data  and Event states  <*********************> **/
     /**
      *  Holds the data of all the composables in the view
@@ -41,6 +35,11 @@ class MainViewModel @Inject constructor( ) : ViewModel() {
     val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
     /** <*********************> Data  and Event states  <*********************> **/
 
+
+    init {
+        // We shall initialize the handling the intent part when the view model starts
+        handleIntent()
+    }
 
     /** <************> Get the INTENTS from user -- UI Action is invoked from composable <************> **/
     private fun handleIntent() {
