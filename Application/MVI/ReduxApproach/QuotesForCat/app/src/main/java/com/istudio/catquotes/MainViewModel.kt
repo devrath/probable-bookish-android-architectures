@@ -1,14 +1,14 @@
-package com.istudio.catapp
+package com.istudio.catquotes
 
 import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.istudio.catapp.api.AnimalRepo
-import com.istudio.catapp.states.MainData
-import com.istudio.catapp.states.MainIntent
-import com.istudio.catapp.states.MainState
+import com.istudio.catquotes.api.AnimalRepo
+import com.istudio.catquotes.states.MainData
+import com.istudio.catquotes.states.MainIntent
+import com.istudio.catquotes.states.MainState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.consumeAsFlow

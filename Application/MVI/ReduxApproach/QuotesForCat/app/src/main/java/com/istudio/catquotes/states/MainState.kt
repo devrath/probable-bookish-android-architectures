@@ -1,4 +1,4 @@
-package com.istudio.catapp.states
+package com.istudio.catquotes.states
 
 
 sealed class MainState {
