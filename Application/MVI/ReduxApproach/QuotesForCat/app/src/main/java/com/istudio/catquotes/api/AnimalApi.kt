@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface AnimalApi {
     @GET("/facts")
-    suspend fun getAnimals(): AnimalResponse
+    suspend fun getAnimals(): Array<AnimalResponse>
 }
