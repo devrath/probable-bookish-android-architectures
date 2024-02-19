@@ -1,7 +1,8 @@
 package com.istudio.catapp.api
 
 import com.istudio.catapp.api.AnimalApi
+import javax.inject.Inject
 
-class AnimalRepo(private val api: AnimalApi) {
+class AnimalRepo @Inject constructor(private val api: AnimalApi) {
     suspend fun getAnimals() = api.getAnimals()
 }

@@ -1,9 +1,11 @@
 package com.istudio.catapp
 
+import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.istudio.catapp.api.AnimalRepo
 import com.istudio.catapp.states.MainData
 import com.istudio.catapp.states.MainIntent
 import com.istudio.catapp.states.MainState
@@ -14,7 +16,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor( ) : ViewModel() {
+class MainViewModel @Inject constructor(
+    val repo: AnimalRepo
+) : ViewModel() {
 
     /** <*********************> Data  and Event states  <*********************> **/
     /**
@@ -47,7 +51,10 @@ class MainViewModel @Inject constructor( ) : ViewModel() {
             // From channel, We convert into a  flow and observe it ----> Thus then initiating the action to be performed
             userIntent.consumeAsFlow().collect { collector ->
                 when (collector) {
-                    is MainIntent.FetchQuote -> {}
+                    is MainIntent.FetchQuote -> {
+                        val result = repo.getAnimals()
+                        Log.d("Tag", result.toString())
+                    }
                 }
             }
         }
