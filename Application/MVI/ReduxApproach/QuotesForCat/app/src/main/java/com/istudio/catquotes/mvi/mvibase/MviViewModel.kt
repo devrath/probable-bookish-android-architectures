@@ -1,7 +1,7 @@
-package com.istudio.catquotes.mvibase
+package com.istudio.catquotes.mvi.mvibase
 
-import com.istudio.catquotes.mvibase.interfaces.MviIntent
-import com.istudio.catquotes.mvibase.interfaces.MviViewState
+import com.istudio.catquotes.mvi.mvibase.interfaces.MviIntent
+import com.istudio.catquotes.mvi.mvibase.interfaces.MviViewState
 import kotlinx.coroutines.flow.Flow
 
 /**
