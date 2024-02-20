@@ -1,4 +1,4 @@
-package com.istudio.catquotes
+package com.istudio.catquotes.main.screen_get_quotes.vm
 
 import android.util.Log
 import androidx.compose.runtime.MutableState
@@ -15,6 +15,10 @@ import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Each view model will have a process holder property to do the processing
+ *
+ */
 @HiltViewModel
 class MainViewModel @Inject constructor(
     val repo: AnimalRepo

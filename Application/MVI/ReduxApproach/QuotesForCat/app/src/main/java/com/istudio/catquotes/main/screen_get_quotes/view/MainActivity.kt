@@ -1,4 +1,4 @@
-package com.istudio.catquotes
+package com.istudio.catquotes.main.screen_get_quotes.view
 
 import android.os.Bundle
 import android.widget.Toast
@@ -19,6 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.lifecycleScope
+import com.istudio.catquotes.main.screen_get_quotes.vm.MainViewModel
 import com.istudio.catquotes.states.MainIntent
 import com.istudio.catquotes.states.MainState
 import com.istudio.catquotes.ui.theme.CatQuotesTheme

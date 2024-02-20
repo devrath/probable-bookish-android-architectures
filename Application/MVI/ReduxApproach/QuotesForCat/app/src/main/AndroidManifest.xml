@@ -16,7 +16,7 @@
         android:theme="@style/Theme.CatQuotes"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".main.screen_get_quotes.view.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.CatQuotes">
