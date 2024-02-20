@@ -1,4 +1,4 @@
-package com.istudio.catquotes.mvi.states
+package com.istudio.catquotes.mvi.states.getQuotes
 
 import com.istudio.catquotes.mvi.mvibase.interfaces.MviIntent
 
