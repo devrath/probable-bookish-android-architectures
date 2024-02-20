@@ -5,7 +5,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.istudio.catquotes.api.AnimalRepo
+import com.istudio.catquotes.api.QuotesRepo
 import com.istudio.catquotes.states.MainData
 import com.istudio.catquotes.states.MainIntent
 import com.istudio.catquotes.states.MainState
@@ -21,7 +21,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    val repo: AnimalRepo
+    val repo: QuotesRepo
 ) : ViewModel() {
 
     /** <*********************> Data  and Event states  <*********************> **/
@@ -56,7 +56,7 @@ class MainViewModel @Inject constructor(
             userIntent.consumeAsFlow().collect { collector ->
                 when (collector) {
                     is MainIntent.FetchQuote -> {
-                        val result = repo.getAnimals()
+                        val result = repo.getQuotes()
                         Log.d("Tag", result.toString())
                     }
                 }

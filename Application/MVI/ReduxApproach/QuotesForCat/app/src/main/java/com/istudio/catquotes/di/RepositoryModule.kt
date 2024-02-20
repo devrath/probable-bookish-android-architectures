@@ -1,7 +1,7 @@
 package com.istudio.catquotes.di
 
 import com.istudio.catquotes.api.AnimalApi
-import com.istudio.catquotes.api.AnimalRepo
+import com.istudio.catquotes.api.QuotesRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,8 +14,8 @@ object RepositoryModule {
 
     @ViewModelScoped
     @Provides
-    fun getRepository(api: AnimalApi): AnimalRepo {
-        return AnimalRepo(api)
+    fun getRepository(api: AnimalApi): QuotesRepo {
+        return QuotesRepo(api)
     }
 
 }

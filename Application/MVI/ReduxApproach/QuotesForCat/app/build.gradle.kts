@@ -83,6 +83,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("io.reactivex.rxjava3:rxjava:3.0.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
 
     // RxJava
     implementation("io.reactivex.rxjava2:rxjava:2.2.19")
