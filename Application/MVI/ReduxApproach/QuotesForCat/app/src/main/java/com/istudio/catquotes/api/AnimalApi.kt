@@ -9,5 +9,5 @@ interface AnimalApi {
     @GET("/facts")
     suspend fun getQuotes(): Array<AnimalResponse>
     @GET("/facts")
-    fun getQuotesObservable(): Observable<Array<AnimalResponse>>
+    fun getQuotesObservable(): Observable<List<AnimalResponse>>
 }
