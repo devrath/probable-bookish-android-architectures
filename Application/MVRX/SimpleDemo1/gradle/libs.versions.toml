@@ -1,6 +1,6 @@
 [versions]
 agp = "8.3.0"
-kotlin = "1.9.0"
+kotlin = "1.9.10"
 coreKtx = "1.12.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -22,10 +22,14 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-mavericks = { group = "com.airbnb.android", name = "mavericks", version.ref = "mavericksVersion" }
+
 hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
 hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
 hiltNavigationFragment = { group = "androidx.hilt", name = "hilt-navigation-fragment", version.ref = "hiltNavigationFragmentVersion" }
+
+mavericks = { group = "com.airbnb.android", name = "mavericks", version.ref = "mavericksVersion" }
+mavericks-navigation = { group = "com.airbnb.android", name = "mavericks-navigation", version.ref = "mavericksVersion" }
+mavericks-compose = { group = "com.airbnb.android", name = "mavericks-compose", version.ref = "mavericksVersion" }
 
 
 
@@ -33,3 +37,4 @@ hiltNavigationFragment = { group = "androidx.hilt", name = "hilt-navigation-frag
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }

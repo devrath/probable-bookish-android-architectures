@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.kotlin.parcelize)
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
 }
@@ -58,5 +59,7 @@ dependencies {
 
     // Mavericks
     implementation(libs.mavericks)
+    implementation(libs.mavericks.navigation)
+    implementation(libs.mavericks.compose)
 
 }
