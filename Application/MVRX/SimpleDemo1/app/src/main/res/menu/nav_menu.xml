@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/oneId"
+        android:icon="@drawable/ic_one"
+        android:title="@string/tab"  />
+    <item
+        android:id="@+id/twoId"
+        android:icon="@drawable/ic_two"
+        android:title="@string/tab" />
+    <item
+        android:id="@+id/threeId"
+        android:icon="@drawable/ic_three"
+        android:title="@string/tab" />
+    <item
+        android:id="@+id/fourId"
+        android:icon="@drawable/ic_four"
+        android:title="@string/tab" />
+    <item
+        android:id="@+id/fiveId"
+        android:icon="@drawable/ic_five"
+        android:title="@string/tab" />
+</menu>
