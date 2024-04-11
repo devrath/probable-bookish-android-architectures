@@ -1,35 +1,39 @@
 package com.istudio.demo.main
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.airbnb.mvrx.viewModel
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
+import com.airbnb.mvrx.InternalMavericksApi
+import com.airbnb.mvrx.MavericksView
 import com.istudio.demo.R
+import com.istudio.demo.common.mavericks.activityViewModel
 import com.istudio.demo.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),MavericksView {
 
+    val TAG = MainActivity::class.java.name
     private lateinit var binding: ActivityMainBinding
 
-    //private val viewModel : MainViewModel by activityViewModel()
+    private var navController : NavController? = null
+
+    @OptIn(InternalMavericksApi::class)
+    private val viewModel : MainViewModel by activityViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        // Set navigation controller
+        navController = supportFragmentManager.findFragmentById(R.id.nav_controller)?.findNavController()
+    }
+
+    override fun invalidate() {
+
     }
 
 }

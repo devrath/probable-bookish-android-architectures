@@ -54,18 +54,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
     // Hilt
     implementation(libs.hiltAndroid)
     kapt(libs.hiltCompiler)
     implementation(libs.hiltNavigationFragment)
-
     // Mavericks
     implementation(libs.mavericks)
     implementation(libs.mavericks.navigation)
     implementation(libs.mavericks.compose)
-
     // Splash
     implementation(libs.androidx.core.splash)
+    // Navigation
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
 
 }

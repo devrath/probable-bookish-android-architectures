@@ -13,6 +13,7 @@ mavericksVersion = "3.0.9"
 hiltVersion = "2.51.1"
 hiltNavigationFragmentVersion = "1.2.0"
 androidxCoreSplashVersion = "1.0.1"
+androidx-navigation = "2.7.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -23,16 +24,20 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-
+# Hilt
 hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
 hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
 hiltNavigationFragment = { group = "androidx.hilt", name = "hilt-navigation-fragment", version.ref = "hiltNavigationFragmentVersion" }
-
+# Mavericks
 mavericks = { group = "com.airbnb.android", name = "mavericks", version.ref = "mavericksVersion" }
 mavericks-navigation = { group = "com.airbnb.android", name = "mavericks-navigation", version.ref = "mavericksVersion" }
 mavericks-compose = { group = "com.airbnb.android", name = "mavericks-compose", version.ref = "mavericksVersion" }
-
+# Splash
 androidx-core-splash = { module = "androidx.core:core-splashscreen", version.ref = "androidxCoreSplashVersion" }
+# Navigation
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
