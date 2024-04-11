@@ -39,6 +39,9 @@ android {
     kapt {
         correctErrorTypes = true
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -61,5 +64,8 @@ dependencies {
     implementation(libs.mavericks)
     implementation(libs.mavericks.navigation)
     implementation(libs.mavericks.compose)
+
+    // Splash
+    implementation(libs.androidx.core.splash)
 
 }

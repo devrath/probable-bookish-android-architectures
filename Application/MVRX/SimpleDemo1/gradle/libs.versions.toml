@@ -12,6 +12,7 @@ constraintlayout = "2.1.4"
 mavericksVersion = "3.0.9"
 hiltVersion = "2.51.1"
 hiltNavigationFragmentVersion = "1.2.0"
+androidxCoreSplashVersion = "1.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,7 +32,7 @@ mavericks = { group = "com.airbnb.android", name = "mavericks", version.ref = "m
 mavericks-navigation = { group = "com.airbnb.android", name = "mavericks-navigation", version.ref = "mavericksVersion" }
 mavericks-compose = { group = "com.airbnb.android", name = "mavericks-compose", version.ref = "mavericksVersion" }
 
-
+androidx-core-splash = { module = "androidx.core:core-splashscreen", version.ref = "androidxCoreSplashVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
