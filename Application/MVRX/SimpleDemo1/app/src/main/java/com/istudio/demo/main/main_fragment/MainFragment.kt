@@ -1,4 +1,4 @@
-package com.istudio.demo.home
+package com.istudio.demo.main.main_fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
