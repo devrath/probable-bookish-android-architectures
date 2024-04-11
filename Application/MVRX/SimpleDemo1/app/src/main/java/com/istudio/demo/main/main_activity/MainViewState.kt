@@ -1,4 +1,4 @@
-package com.istudio.demo.main
+package com.istudio.demo.main.main_activity
 
 import android.os.Parcelable
 import com.airbnb.mvrx.MavericksState

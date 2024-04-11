@@ -1,9 +1,6 @@
-package com.istudio.demo.main
+package com.istudio.demo.main.main_activity
 
-import androidx.lifecycle.ViewModel
 import com.airbnb.mvrx.MavericksViewModel
-import com.istudio.demo.CounterState
-import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
