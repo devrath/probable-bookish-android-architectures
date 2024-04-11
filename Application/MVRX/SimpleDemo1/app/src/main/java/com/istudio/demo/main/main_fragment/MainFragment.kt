@@ -6,24 +6,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.airbnb.mvrx.MavericksView
 import com.istudio.demo.R
 import com.istudio.demo.common.Screen
 import com.istudio.demo.common.ScreenProvider
 import com.istudio.demo.common.navigationIdsUsesNavbar
 import com.istudio.demo.databinding.FragmentMainBinding
+import com.istudio.demo.main.main_fragment.tabs.TabViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.airbnb.mvrx.activityViewModel
+import com.google.android.material.navigation.NavigationBarView
 
 @AndroidEntryPoint
-class MainFragment : Fragment(), ScreenProvider {
+class MainFragment : Fragment(), MavericksView, ScreenProvider {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private val mainViewModel : MainViewModel by activityViewModels()
+    //private val mainViewModel : MainViewModel by activityViewModels()
+    private val tabViewModel : TabViewModel by activityViewModel()
 
     override val screenName: String
         get() = Screen.MAIN.pageName
@@ -43,6 +47,7 @@ class MainFragment : Fragment(), ScreenProvider {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpBottomNavigation()
+        addTabListener()
     }
 
     override fun onDestroyView() {
@@ -76,10 +81,23 @@ class MainFragment : Fragment(), ScreenProvider {
 
     }
 
+    private fun addTabListener() {
+       val bottomView : NavigationBarView = binding.bottomNav
+       bottomView.apply {
+           setOnItemReselectedListener { item ->
+               tabViewModel.setTabReselected(item.title.toString())
+           }
+       }
+    }
+
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             MainFragment().apply { arguments = Bundle().apply {} }
+    }
+
+    override fun invalidate() {
+
     }
 
 }

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/oneId"
+        android:id="@+id/screenOneFragment"
         android:icon="@drawable/ic_one"
-        android:title="@string/tab"  />
+        android:title="@string/one"  />
     <item
-        android:id="@+id/twoId"
+        android:id="@+id/screenTwoFragment"
         android:icon="@drawable/ic_two"
-        android:title="@string/tab" />
+        android:title="@string/two" />
     <item
-        android:id="@+id/threeId"
+        android:id="@+id/screenThreeFragment"
         android:icon="@drawable/ic_three"
-        android:title="@string/tab" />
+        android:title="@string/three" />
     <item
-        android:id="@+id/fourId"
+        android:id="@+id/screenFourFragment"
         android:icon="@drawable/ic_four"
-        android:title="@string/tab" />
+        android:title="@string/four" />
     <item
-        android:id="@+id/fiveId"
+        android:id="@+id/screenFiveFragment"
         android:icon="@drawable/ic_five"
-        android:title="@string/tab" />
+        android:title="@string/five" />
 </menu>

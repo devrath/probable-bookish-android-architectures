@@ -29,8 +29,8 @@
         android:background="?android:attr/windowBackground"
         app:menu="@menu/nav_menu"
         app:compatShadowEnabled="true"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         app:labelVisibilityMode="labeled"
         tools:viewBindingType="com.google.android.material.navigation.NavigationBarView"/>
 
