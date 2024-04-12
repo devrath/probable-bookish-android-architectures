@@ -90,12 +90,6 @@ class MainFragment : Fragment(), MavericksView, ScreenProvider {
        }
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MainFragment().apply { arguments = Bundle().apply {} }
-    }
-
     override fun invalidate() {
 
     }
