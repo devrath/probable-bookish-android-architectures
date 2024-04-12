@@ -9,11 +9,9 @@
     tools:context=".features.screen_one.ScreenOneFragment">
 
 
-    <TextView
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:text="Screen One" />
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
