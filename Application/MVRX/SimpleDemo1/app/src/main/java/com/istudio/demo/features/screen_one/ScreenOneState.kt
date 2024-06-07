@@ -1,4 +1,3 @@
-data class ScreenOneState(
 package com.istudio.demo.features.screen_one
 
 import com.airbnb.mvrx.MavericksState
