@@ -4,8 +4,8 @@ import com.airbnb.mvrx.MavericksViewModel
 import javax.inject.Inject
 
 class ScreenOneViewModel @Inject constructor(
-    initialState : ScreenOneState
-) : MavericksViewModel<ScreenOneState>(initialState){
+    initialState: ScreenOneState
+) : MavericksViewModel<ScreenOneState>(initialState) {
 
     init {
         viewModelObservers()
@@ -24,41 +24,31 @@ class ScreenOneViewModel @Inject constructor(
     fun incrementCounterTwo() {
         setState { updateCounterTwo() }
     }
+
     /**
      * **************************************** Observers **************************************
      */
-    /**
-     * Invoked whenever a state changes.
-     */
     private fun observerCompleteStateChanges() {
         onEach { state ->
-            println("ScreenOneViewModel: $state")
+            println("ScreenOneViewModel: State changed to $state")
         }
     }
 
-    /**
-     * Invoked whenever one property changes.
-     */
     private fun observeSinglePropertyChanges() {
-        onEach(ScreenOneState::counterOneInitialValue) { screenOneState ->
-            println("ScreenOneViewModel: $screenOneState")
+        onEach(ScreenOneState::counterOneInitialValue) { counterOneValue ->
+            println("ScreenOneViewModel: counterOneInitialValue changed to $counterOneValue")
         }
     }
 
-    /**
-     * Invoked whenever more than one properties changes.
-     */
     private fun observeMultiplePropertyChanges() {
         onEach(
             ScreenOneState::counterOneInitialValue,
             ScreenOneState::counterTwoInitialValue
-        ) { screenOneState , screenTwoState ->
-            println("ScreenOneViewModel: $screenOneState, $screenTwoState")
+        ) { counterOneValue, counterTwoValue ->
+            println("ScreenOneViewModel: counterOneInitialValue = $counterOneValue, counterTwoInitialValue = $counterTwoValue")
         }
     }
     /**
      * **************************************** Observers **************************************
      */
-
-
 }
