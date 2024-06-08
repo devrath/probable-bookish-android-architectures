@@ -24,7 +24,7 @@ class NetworkScreenFragment : Fragment(), ScreenProvider, MavericksView {
     private val binding get() = _binding!!
 
 
-    private val viewModel: CounterScreenViewModel by fragmentViewModel()
+    private val viewModel: NetworkScreenViewModel by fragmentViewModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +55,7 @@ class NetworkScreenFragment : Fragment(), ScreenProvider, MavericksView {
     override fun invalidate() {
         withState(viewModel) { state ->
             println("$screenName <--> Current state: $state")
-            println("$screenName <--> CounterOneInitialValue state: ${state.counterOneInitialValue}")
-            println("$screenName <--> CounterTwoInitialValue state: ${state.counterTwoInitialValue}")
+
         }
     }
 
