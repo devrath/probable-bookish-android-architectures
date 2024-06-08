@@ -5,8 +5,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class CounterScreenViewModel @Inject constructor(
-    initialState: ScreenOneState
-) : MavericksViewModel<ScreenOneState>(initialState) {
+    initialState: CounterScreenState
+) : MavericksViewModel<CounterScreenState>(initialState) {
 
     init {
         viewModelObservers()
@@ -38,15 +38,15 @@ class CounterScreenViewModel @Inject constructor(
     }
 
     private fun observeSinglePropertyChanges() {
-        onEach(ScreenOneState::counterOneInitialValue) { counterOneValue ->
+        onEach(CounterScreenState::counterOneInitialValue) { counterOneValue ->
             println("ScreenOneViewModel: counterOneInitialValue changed to $counterOneValue")
         }
     }
 
     private fun observeMultiplePropertyChanges() {
         onEach(
-            ScreenOneState::counterOneInitialValue,
-            ScreenOneState::counterTwoInitialValue
+            CounterScreenState::counterOneInitialValue,
+            CounterScreenState::counterTwoInitialValue
         ) { counterOneValue, counterTwoValue ->
             println("ScreenOneViewModel: counterOneInitialValue = $counterOneValue, counterTwoInitialValue = $counterTwoValue")
         }

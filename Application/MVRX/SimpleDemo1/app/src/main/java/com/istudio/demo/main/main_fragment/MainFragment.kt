@@ -6,14 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.airbnb.mvrx.MavericksView
 import com.istudio.demo.R
 import com.istudio.demo.common.Screen
 import com.istudio.demo.common.ScreenProvider
-import com.istudio.demo.common.navigationIdsUsesNavbar
 import com.istudio.demo.databinding.FragmentMainBinding
 import com.istudio.demo.main.main_fragment.tabs.TabViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,7 +28,7 @@ class MainFragment : Fragment(), MavericksView, ScreenProvider {
     private val tabViewModel : TabViewModel by activityViewModel()
 
     override val screenName: String
-        get() = Screen.MAIN.pageName
+        get() = Screen.MAIN_FEATURE.pageName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

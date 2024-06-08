@@ -1,6 +1,6 @@
 package com.istudio.demo.common
 
-import com.istudio.demo.features.screen_five.ScreenFiveFragment
+import com.istudio.demo.features.feature_network.NetworkScreenFragment
 import com.istudio.demo.features.screen_four.ScreenFourFragment
 import com.istudio.demo.features.feature_counter.CounterScreenFragment
 import com.istudio.demo.features.screen_three.ScreenThreeFragment
@@ -11,8 +11,9 @@ interface ScreenProvider {
 
 enum class Screen(val pageName : String) {
     SPLASH("page_splash"),
-    MAIN("page_home"),
-    SCREEN_ONE("page_screen_one"),
+    MAIN_FEATURE("main_feature"),
+    COUNTER_FEATURE("counter_feature"),
+    NETWORK_FEATURE("network_feature"),
     SCREEN_TWO("page_screen_two"),
     SCREEN_THREE("page_screen_three"),
     SCREEN_FOUR("page_screen_four"),
@@ -24,7 +25,7 @@ enum class NavbarPage(val navigationId : String, val jClass : Class<*>) {
     ScreenTwo("ScreenTwo", CounterScreenFragment::class.java),
     ScreenThree("ScreenThree", ScreenThreeFragment::class.java),
     ScreenFour("ScreenFour", ScreenFourFragment::class.java),
-    ScreenFive("ScreenFive", ScreenFiveFragment::class.java)
+    ScreenFive("ScreenFive", NetworkScreenFragment::class.java)
 }
 
 val navigationIdsUsesNavbar = listOf(

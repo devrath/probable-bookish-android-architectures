@@ -14,7 +14,7 @@
         android:id="@+id/screenTwoFragment"
         android:name="com.istudio.demo.features.screen_two.ScreenTwoFragment"
         android:label="fragment_screen_two"
-        tools:layout="@layout/fragment_screen_two" />
+        tools:layout="@layout/fragment_screen_network" />
     <fragment
         android:id="@+id/screenThreeFragment"
         android:name="com.istudio.demo.features.screen_three.ScreenThreeFragment"
@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_screen_four" />
     <fragment
         android:id="@+id/screenFiveFragment"
-        android:name="com.istudio.demo.features.screen_five.ScreenFiveFragment"
+        android:name="com.istudio.demo.features.feature_network.NetworkScreenFragment"
         android:label="fragment_screen_five"
         tools:layout="@layout/fragment_screen_five" />
 </navigation>

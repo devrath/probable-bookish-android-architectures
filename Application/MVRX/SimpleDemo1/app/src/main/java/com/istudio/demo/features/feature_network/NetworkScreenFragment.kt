@@ -1,4 +1,4 @@
-package com.istudio.demo.features.feature_counter
+package com.istudio.demo.features.feature_network
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,15 +12,15 @@ import com.istudio.demo.R
 import com.istudio.demo.common.Screen
 import com.istudio.demo.common.ScreenProvider
 import com.istudio.demo.databinding.FragmentScreenCounterBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.istudio.demo.databinding.FragmentScreenNetworkBinding
+import com.istudio.demo.features.feature_counter.CounterScreenViewModel
 
-@AndroidEntryPoint
-class CounterScreenFragment : Fragment(), ScreenProvider, MavericksView {
+class NetworkScreenFragment : Fragment(), ScreenProvider, MavericksView {
 
-    override val screenName: String get() = Screen.COUNTER_FEATURE.pageName
+    override val screenName: String get() = Screen.NETWORK_FEATURE.pageName
 
 
-    private var _binding: FragmentScreenCounterBinding? = null
+    private var _binding: FragmentScreenNetworkBinding? = null
     private val binding get() = _binding!!
 
 
@@ -37,8 +37,8 @@ class CounterScreenFragment : Fragment(), ScreenProvider, MavericksView {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        inflater.inflate(R.layout.fragment_screen_counter, container, false)
-        _binding = FragmentScreenCounterBinding.inflate(inflater, container, false)
+        inflater.inflate(R.layout.fragment_screen_network, container, false)
+        _binding = FragmentScreenNetworkBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -57,22 +57,12 @@ class CounterScreenFragment : Fragment(), ScreenProvider, MavericksView {
             println("$screenName <--> Current state: $state")
             println("$screenName <--> CounterOneInitialValue state: ${state.counterOneInitialValue}")
             println("$screenName <--> CounterTwoInitialValue state: ${state.counterTwoInitialValue}")
-
-            binding.counterOneTextId.text = state.counterOneInitialValue.toString()
-            binding.counterTwoTextId.text = state.counterTwoInitialValue.toString()
         }
     }
 
 
     private fun setOnClickListeners() {
-        binding.apply {
-            counterOneButtonId.setOnClickListener {
-                viewModel.incrementCounterOne()
-            }
-            counterTwoButtonId.setOnClickListener {
-                viewModel.incrementCounterTwo()
-            }
-        }
+
     }
 
 

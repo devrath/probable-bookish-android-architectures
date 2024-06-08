@@ -2,8 +2,8 @@ package com.istudio.demo.features.feature_counter
 
 import com.airbnb.mvrx.MavericksState
 
-data class ScreenOneState(
-    val state : ScreenOneUiState = ScreenOneUiState.Uninitialized,
+data class CounterScreenState(
+    val state : CounterScreenUiState = CounterScreenUiState.Uninitialized,
     val counterOneInitialValue : Int = 0,
     val counterTwoInitialValue : Int = 0
 ) : MavericksState {
@@ -11,8 +11,8 @@ data class ScreenOneState(
     fun updateCounterTwo() = copy(counterTwoInitialValue = counterTwoInitialValue + 1)
 }
 
-sealed class ScreenOneUiState {
-    data object Uninitialized : ScreenOneUiState()
-    data object Loading : ScreenOneUiState()
-    data object Initilized : ScreenOneUiState()
+sealed class CounterScreenUiState {
+    data object Uninitialized : CounterScreenUiState()
+    data object Loading : CounterScreenUiState()
+    data object Initilized : CounterScreenUiState()
 }
