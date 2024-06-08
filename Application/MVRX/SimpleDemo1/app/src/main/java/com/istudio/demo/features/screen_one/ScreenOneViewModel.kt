@@ -17,16 +17,13 @@ class ScreenOneViewModel @Inject constructor(
         observeMultiplePropertyChanges()
     }
 
-
-    fun retrieveCurrentState() {
-        withState { state ->
-            println("Current state: $state")
-            println("CounterOneInitialValue state: ${state.counterOneInitialValue}")
-            println("CounterTwoInitialValue state: ${state.counterTwoInitialValue}")
-        }
+    fun incrementCounterOne() {
+        setState { updateCounterOne() }
     }
 
-
+    fun incrementCounterTwo() {
+        setState { updateCounterTwo() }
+    }
     /**
      * **************************************** Observers **************************************
      */

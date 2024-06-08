@@ -8,10 +8,58 @@
     android:layout_gravity="center"
     tools:context=".features.screen_one.ScreenOneFragment">
 
-
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/compose_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/counterOneButtonId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="Counter One"/>
+
+        <TextView
+            android:id="@+id/counterOneTextId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="0"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/counterTwoButtonId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="Counter Two"/>
+
+        <TextView
+            android:id="@+id/counterTwoTextId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="0"/>
+
+    </LinearLayout>
 
 </LinearLayout>

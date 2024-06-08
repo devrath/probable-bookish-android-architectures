@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import com.airbnb.mvrx.MavericksView
 import com.airbnb.mvrx.fragmentViewModel
 import com.airbnb.mvrx.withState
+import com.istudio.demo.R
 import com.istudio.demo.common.Screen
 import com.istudio.demo.common.ScreenProvider
 import com.istudio.demo.databinding.FragmentScreenOneBinding
@@ -38,12 +39,14 @@ class ScreenOneFragment : Fragment(), ScreenProvider, MavericksView {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentScreenOneBinding.inflate(inflater,container,false)
-        binding.composeView.apply {
-            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
-            setContent { MyApplicationTheme { ScreenOneComposable(viewModel) } }
-        }
+        inflater.inflate(R.layout.fragment_screen_one, container, false)
+        _binding = FragmentScreenOneBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setOnClickListeners()
     }
 
     override fun onDestroyView() {
@@ -53,12 +56,26 @@ class ScreenOneFragment : Fragment(), ScreenProvider, MavericksView {
 
     override fun invalidate() {
         withState(viewModel) { state ->
-            println("FRAGMENT <--> Current state: $state")
-            println("FRAGMENT <--> CounterOneInitialValue state: ${state.counterOneInitialValue}")
-            println("FRAGMENT <--> CounterTwoInitialValue state: ${state.counterTwoInitialValue}")
+            println("$screenName <--> Current state: $state")
+            println("$screenName <--> CounterOneInitialValue state: ${state.counterOneInitialValue}")
+            println("$screenName <--> CounterTwoInitialValue state: ${state.counterTwoInitialValue}")
+
+            binding.counterOneTextId.text = state.counterOneInitialValue.toString()
+            binding.counterTwoTextId.text = state.counterTwoInitialValue.toString()
         }
     }
 
+
+    private fun setOnClickListeners() {
+        binding.apply {
+            counterOneButtonId.setOnClickListener {
+                viewModel.incrementCounterOne()
+            }
+            counterTwoButtonId.setOnClickListener {
+                viewModel.incrementCounterTwo()
+            }
+        }
+    }
 
 
 }

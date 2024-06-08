@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,27 +27,26 @@ fun ScreenOneComposable(
     ) {
 
         Row(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = view.counterOneInitialValue.toString())
-            Button(onClick = { view.updateCounterOne() }) {
+            Text(text = view.counterOneInitialValue.toString(), modifier = Modifier.weight(1f))
+            Button(onClick = { view.updateCounterOne() }, modifier = Modifier.weight(1f)) {
                 Text(text = "INCREMENT")
             }
         }
 
         Row(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = view.counterTwoInitialValue.toString())
-            Button(onClick = { view.updateCounterTwo() }) {
+            Text(text = view.counterTwoInitialValue.toString(), modifier = Modifier.weight(1f))
+            Button(onClick = { view.updateCounterTwo() }, modifier = Modifier.weight(1f)) {
                 Text(text = "INCREMENT")
             }
         }
-
     }
 
 
