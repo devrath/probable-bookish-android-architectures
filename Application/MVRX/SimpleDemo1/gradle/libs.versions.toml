@@ -48,6 +48,7 @@ hiltNavigationFragment = { group = "androidx.hilt", name = "hilt-navigation-frag
 mavericks = { module = "com.airbnb.android:mavericks", version.ref = "mavericksVersion" }
 mavericks-compose = { module = "com.airbnb.android:mavericks-compose", version.ref = "mavericksVersion" }
 mavericks-navigation = { module = "com.airbnb.android:mavericks-navigation", version.ref = "mavericksVersion" }
+mavericks-hilt = { module = "com.airbnb.android:mavericks-hilt", version.ref = "mavericksVersion" }
 # Splash
 androidx-core-splash = { module = "androidx.core:core-splashscreen", version.ref = "androidxCoreSplashVersion" }
 # Navigation

@@ -55,7 +55,6 @@ class NetworkScreenFragment : Fragment(), ScreenProvider, MavericksView {
     override fun invalidate() {
         withState(viewModel) { state ->
             println("$screenName <--> Current state: $state")
-
         }
     }
 

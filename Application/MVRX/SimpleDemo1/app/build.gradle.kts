@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.mavericks)
     implementation(libs.mavericks.navigation)
     implementation(libs.mavericks.compose)
+    implementation(libs.mavericks.hilt)
     // Splash
     implementation(libs.androidx.core.splash)
     // Navigation
