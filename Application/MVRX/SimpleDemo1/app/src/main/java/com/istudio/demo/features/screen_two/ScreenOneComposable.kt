@@ -1,4 +1,4 @@
-package com.istudio.demo.features.screen_one
+package com.istudio.demo.features.screen_two
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,10 +12,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.airbnb.mvrx.compose.collectAsState
+import com.istudio.demo.features.feature_counter.CounterScreenViewModel
 
 @Composable
 fun ScreenOneComposable(
-    viewModel: ScreenOneViewModel
+    viewModel: CounterScreenViewModel
 ) {
 
     val view by viewModel.collectAsState()

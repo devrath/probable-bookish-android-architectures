@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_gravity="center"
-    tools:context=".features.screen_one.ScreenOneFragment">
+    tools:context=".features.feature_counter.CounterScreenFragment">
 
 
     <TextView

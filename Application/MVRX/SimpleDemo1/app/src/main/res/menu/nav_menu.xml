@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/screenOneFragment"
-        android:icon="@drawable/ic_one"
-        android:title="Fragment"  />
+        android:icon="@drawable/counter_icon"
+        android:title="Counter"  />
     <item
         android:id="@+id/screenTwoFragment"
-        android:icon="@drawable/ic_two"
+        android:icon="@drawable/network_icon"
         android:title="Network" />
     <item
         android:id="@+id/screenThreeFragment"

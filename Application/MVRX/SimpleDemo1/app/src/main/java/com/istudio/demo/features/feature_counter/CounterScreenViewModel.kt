@@ -1,10 +1,10 @@
-package com.istudio.demo.features.screen_one
+package com.istudio.demo.features.feature_counter
 
 import com.airbnb.mvrx.MavericksViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class ScreenOneViewModel @Inject constructor(
+class CounterScreenViewModel @Inject constructor(
     initialState: ScreenOneState
 ) : MavericksViewModel<ScreenOneState>(initialState) {
 

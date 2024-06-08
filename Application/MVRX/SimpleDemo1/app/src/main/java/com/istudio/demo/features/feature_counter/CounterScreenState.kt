@@ -1,4 +1,4 @@
-package com.istudio.demo.features.screen_one
+package com.istudio.demo.features.feature_counter
 
 import com.airbnb.mvrx.MavericksState
 

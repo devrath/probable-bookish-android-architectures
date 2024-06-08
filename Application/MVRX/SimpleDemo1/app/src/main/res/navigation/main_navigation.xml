@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/screenOneFragment"
-        android:name="com.istudio.demo.features.screen_one.ScreenOneFragment"
+        android:name="com.istudio.demo.features.feature_counter.CounterScreenFragment"
         android:label="fragment_screen_one"
-        tools:layout="@layout/fragment_screen_one" />
+        tools:layout="@layout/fragment_screen_counter" />
     <fragment
         android:id="@+id/screenTwoFragment"
         android:name="com.istudio.demo.features.screen_two.ScreenTwoFragment"
