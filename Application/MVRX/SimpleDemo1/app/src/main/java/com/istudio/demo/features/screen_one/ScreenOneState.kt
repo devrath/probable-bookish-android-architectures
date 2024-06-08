@@ -9,11 +9,10 @@ data class ScreenOneState(
 ) : MavericksState {
     fun updateCounterOne() = copy(counterOneInitialValue = counterOneInitialValue + 1)
     fun updateCounterTwo() = copy(counterTwoInitialValue = counterTwoInitialValue + 1)
-
-    sealed class ScreenOneUiState {
-        data object Uninitialized : ScreenOneUiState()
-        data object Loading : ScreenOneUiState()
-        data object Initilized : ScreenOneUiState()
-    }
 }
 
+sealed class ScreenOneUiState {
+    data object Uninitialized : ScreenOneUiState()
+    data object Loading : ScreenOneUiState()
+    data object Initilized : ScreenOneUiState()
+}

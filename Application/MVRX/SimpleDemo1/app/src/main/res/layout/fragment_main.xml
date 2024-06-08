@@ -26,7 +26,7 @@
         android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"
         android:scrollIndicators="left"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/black"
         app:menu="@menu/nav_menu"
         app:compatShadowEnabled="true"
         app:itemIconTint="@color/white"

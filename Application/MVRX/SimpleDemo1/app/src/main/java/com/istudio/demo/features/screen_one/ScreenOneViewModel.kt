@@ -1,6 +1,7 @@
 package com.istudio.demo.features.screen_one
 
 import com.airbnb.mvrx.MavericksViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ScreenOneViewModel @Inject constructor(
@@ -12,9 +13,11 @@ class ScreenOneViewModel @Inject constructor(
     }
 
     private fun viewModelObservers() {
-        observerCompleteStateChanges()
-        observeSinglePropertyChanges()
-        observeMultiplePropertyChanges()
+        viewModelScope.launch {
+            observerCompleteStateChanges()
+            observeSinglePropertyChanges()
+            observeMultiplePropertyChanges()
+        }
     }
 
     fun incrementCounterOne() {

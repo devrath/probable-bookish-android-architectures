@@ -3,11 +3,11 @@
     <item
         android:id="@+id/screenOneFragment"
         android:icon="@drawable/ic_one"
-        android:title="@string/one"  />
+        android:title="Fragment"  />
     <item
         android:id="@+id/screenTwoFragment"
         android:icon="@drawable/ic_two"
-        android:title="@string/two" />
+        android:title="Network" />
     <item
         android:id="@+id/screenThreeFragment"
         android:icon="@drawable/ic_three"
